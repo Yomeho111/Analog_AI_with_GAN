@@ -27,3 +27,11 @@ separately. All the images generated are store in results. disc.pth and gen.pth 
 For each files, there is no any commend line parameters.
 
 For all the codes, we refer to the aihwkit examples for our own models.
+
+The W&B project websites:
+
+total_model tuning: https://wandb.ai/mingfeng/RESNET18-GAN2
+
+w_noise tuning: https://wandb.ai/mingfeng/RESNET18-GAN-w_noise1
+
+out_noise tuning: https://wandb.ai/mingfeng/RESNET18-GAN-out_noise1
