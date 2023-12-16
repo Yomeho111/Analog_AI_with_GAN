@@ -1,0 +1,34 @@
+InferenceRPUConfig(
+    runtime=RuntimeParameter(),
+    pre_post=PrePostProcessingParameter(input_range=InputRangeParameter(enable=False)),
+    mapping=MappingParameter(),
+    forward=IOParameters(
+        inp_res=0.00390625,
+        out_noise=0.01,
+        out_res=0.00390625,
+        w_noise_type=WeightNoiseType.ADDITIVE_CONSTANT
+    ),
+    backward=IOParameters(is_perfect=True),
+    update=UpdateParameters(pulse_type=PulseType.NONE),
+    noise_model=PCMLikeNoiseModel(g_converter=SinglePairConductanceConverter(g_max=25.00, g_min=0.00), g_max=25.0, prog_coeff_g_max_reference=25.0, prog_coeff=[0.26348, 1.965, -1.1731], t_0=20.0, t_read=2.5e-07, prog_noise_scale=1.0, read_noise_scale=1.0, drift_scale=1.0),
+    drift_compensation=GlobalDriftCompensation(),
+    clip=WeightClipParameter(type=WeightClipType.NONE),
+    remap=WeightRemapParameter(type=WeightRemapType.NONE),
+    modifier=WeightModifierParameter(type=WeightModifierType.NONE),
+    device=IdealDevice()
+)
+07:21:29 --- Step 20: Generator loss: 0.8518973618745802, discriminator loss: 0.6467706710100174
+Traceback (most recent call last):
+  File "/home/my2770/project/train_wandb.py", line 443, in train
+    training_loop(gen, disc, gen_opt, disc_opt, criterion, dataloader, N_EPOCHS, DISPLAY_STEP, subtask)
+  File "/home/my2770/project/train_wandb.py", line 407, in training_loop
+    store_tensor_images(fake, "fake_images", cur_step, subtask)
+  File "/home/my2770/project/train_wandb.py", line 177, in store_tensor_images
+    save_image(image_grid, os.path.join(RESULTS, subtask, f"{label}_step_{current_step}.png"))
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torchvision/utils.py", line 151, in save_image
+    im.save(fp, format=format)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/PIL/Image.py", line 2350, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/my2770/project/results/GAN/8_8_0_0.01/fake_images_step_20.png'

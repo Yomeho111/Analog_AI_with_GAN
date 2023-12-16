@@ -1,0 +1,24 @@
+InferenceRPUConfig(
+    runtime=RuntimeParameter(),
+    pre_post=PrePostProcessingParameter(input_range=InputRangeParameter(enable=False)),
+    mapping=MappingParameter(),
+    forward=IOParameters(
+        inp_res=0.015625,
+        out_noise=0.01,
+        out_res=0.00390625,
+        w_noise=0.03,
+        w_noise_type=WeightNoiseType.ADDITIVE_CONSTANT
+    ),
+    backward=IOParameters(is_perfect=True),
+    update=UpdateParameters(pulse_type=PulseType.NONE),
+    noise_model=PCMLikeNoiseModel(g_converter=SinglePairConductanceConverter(g_max=25.00, g_min=0.00), g_max=25.0, prog_coeff_g_max_reference=25.0, prog_coeff=[0.26348, 1.965, -1.1731], t_0=20.0, t_read=2.5e-07, prog_noise_scale=1.0, read_noise_scale=1.0, drift_scale=1.0),
+    drift_compensation=GlobalDriftCompensation(),
+    clip=WeightClipParameter(type=WeightClipType.NONE),
+    remap=WeightRemapParameter(type=WeightRemapType.NONE),
+    modifier=WeightModifierParameter(type=WeightModifierType.NONE),
+    device=IdealDevice()
+)
+22:09:30 --- Step 20: Generator loss: 0.7542804777622223, discriminator loss: 0.7359359562397003
+22:11:05 --- Step 40: Generator loss: 0.755022545158863, discriminator loss: 0.7348497167229653
+22:12:40 --- Step 60: Generator loss: 0.755623401204745, discriminator loss: 0.7339662492275238
+22:14:15 --- Step 80: Generator loss: 0.7549425974488259, discriminator loss: 0.7340063616633415

@@ -1,0 +1,26 @@
+InferenceRPUConfig(
+    runtime=RuntimeParameter(),
+    pre_post=PrePostProcessingParameter(input_range=InputRangeParameter(enable=False)),
+    mapping=MappingParameter(),
+    forward=IOParameters(
+        inp_res=0.015625,
+        out_noise=0.03,
+        out_res=0.00390625,
+        w_noise=0.03,
+        w_noise_type=WeightNoiseType.ADDITIVE_CONSTANT
+    ),
+    backward=IOParameters(is_perfect=True),
+    update=UpdateParameters(pulse_type=PulseType.NONE),
+    noise_model=PCMLikeNoiseModel(g_converter=SinglePairConductanceConverter(g_max=25.00, g_min=0.00), g_max=25.0, prog_coeff_g_max_reference=25.0, prog_coeff=[0.26348, 1.965, -1.1731], t_0=20.0, t_read=2.5e-07, prog_noise_scale=1.0, read_noise_scale=1.0, drift_scale=1.0),
+    drift_compensation=GlobalDriftCompensation(),
+    clip=WeightClipParameter(type=WeightClipType.NONE),
+    remap=WeightRemapParameter(type=WeightRemapType.NONE),
+    modifier=WeightModifierParameter(type=WeightModifierType.NONE),
+    device=IdealDevice()
+)
+20:37:08 --- Step 20: Generator loss: 0.7951802760362624, discriminator loss: 0.7742853909730911
+20:38:43 --- Step 40: Generator loss: 0.745433321595192, discriminator loss: 0.7359389185905455
+20:40:18 --- Step 60: Generator loss: 0.7493917316198349, discriminator loss: 0.7348382234573363
+20:41:53 --- Step 80: Generator loss: 0.7538084596395491, discriminator loss: 0.7348659515380858
+20:42:37 --- Completed GAN Example
+[34m[1mwandb[39m[22m: Ctrl + C detected. Stopping sweep.

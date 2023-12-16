@@ -1,0 +1,10 @@
+wandb_version: 1
+
+inp_res:
+  value: 0.0078125
+out_noise:
+  value: 0.03
+out_res:
+  value: 0.00390625
+w_noise:
+  value: 0.1

@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 162, in __getattr__
+    return self.__getitem__(key)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 130, in __getitem__
+    return self._items[key]
+KeyError: 'inp_res'
+The above exception was the direct cause of the following exception:
+Traceback (most recent call last):
+  File "/home/my2770/project/w_noise.py", line 437, in train
+    subtask = str(int(np.log2(1/config.inp_res))) + "_" + str(int(np.log2(1/config.out_res))) + "_" + str(config.w_noise) + "_" + str(config.out_noise)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 164, in __getattr__
+    raise AttributeError(
+AttributeError: <class 'wandb.sdk.wandb_config.Config'> object has no attribute 'inp_res'

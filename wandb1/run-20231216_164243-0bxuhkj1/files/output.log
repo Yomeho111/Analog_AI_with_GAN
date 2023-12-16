@@ -1,0 +1,70 @@
+InferenceRPUConfig(
+    runtime=RuntimeParameter(),
+    pre_post=PrePostProcessingParameter(input_range=InputRangeParameter(enable=False)),
+    mapping=MappingParameter(),
+    forward=IOParameters(
+        inp_res=0.0078125,
+        out_noise=0.03,
+        out_res=0.00390625,
+        w_noise=0.1,
+        w_noise_type=WeightNoiseType.ADDITIVE_CONSTANT
+    ),
+    backward=IOParameters(is_perfect=True),
+    update=UpdateParameters(pulse_type=PulseType.NONE),
+    noise_model=PCMLikeNoiseModel(g_converter=SinglePairConductanceConverter(g_max=25.00, g_min=0.00), g_max=25.0, prog_coeff_g_max_reference=25.0, prog_coeff=[0.26348, 1.965, -1.1731], t_0=20.0, t_read=2.5e-07, prog_noise_scale=1.0, read_noise_scale=1.0, drift_scale=1.0),
+    drift_compensation=GlobalDriftCompensation(),
+    clip=WeightClipParameter(type=WeightClipType.NONE),
+    remap=WeightRemapParameter(type=WeightRemapType.NONE),
+    modifier=WeightModifierParameter(type=WeightModifierType.NONE),
+    device=IdealDevice()
+)
+Traceback (most recent call last):
+  File "/home/my2770/project/train_wandb.py", line 443, in train
+    training_loop(gen, disc, gen_opt, disc_opt, criterion, dataloader, N_EPOCHS, DISPLAY_STEP, subtask)
+  File "/home/my2770/project/train_wandb.py", line 370, in training_loop
+    disc_loss = get_disc_loss(gen, disc, criterion, real, cur_batch_size, Z_DIM, DEVICE)
+  File "/home/my2770/project/train_wandb.py", line 299, in get_disc_loss
+    generated_images = gen(noise_vector)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/train_wandb.py", line 225, in forward
+    return self.gen(noise)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/train_wandb.py", line 155, in forward
+    return self.out(x)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/train_wandb.py", line 112, in forward
+    out = self.out1(x)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/aihwkit/src/aihwkit/nn/modules/conv.py", line 173, in forward
+    return self.analog_module(x_input, tensor_view=self.tensor_view)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/my2770/project/aihwkit/src/aihwkit/simulator/tiles/inference.py", line 375, in forward
+    out = AnalogFunction.apply(
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/autograd/function.py", line 506, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/my2770/project/aihwkit/src/aihwkit/simulator/tiles/functions.py", line 58, in forward
+    out = analog_tile.joint_forward_indexed(input_, is_test, ctx)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/my2770/project/aihwkit/src/aihwkit/simulator/tiles/periphery.py", line 1126, in joint_forward_indexed
+    x_output = self.tile.forward_indexed(  # type: ignore
+RuntimeError: CUDA_CALL Error 'out of memory' at cuda_util.cu:980

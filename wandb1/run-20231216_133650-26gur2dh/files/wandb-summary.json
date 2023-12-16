@@ -1,0 +1,1 @@
+{"mean_discriminator_loss": 0.32996798753738404, "_timestamp": 1702736525.1618893, "_runtime": 2714.9213473796844, "_step": 1769, "mean_generator_loss": 0.34425025582313534, "agg_loss": 0.3371091216802597, "_wandb": {"runtime": 2714}}

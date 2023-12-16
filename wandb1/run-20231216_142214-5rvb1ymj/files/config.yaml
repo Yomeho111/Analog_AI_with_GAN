@@ -1,0 +1,41 @@
+wandb_version: 1
+
+inp_res:
+  desc: null
+  value: 0.00390625
+out_noise:
+  desc: null
+  value: 0.03
+out_res:
+  desc: null
+  value: 0.00390625
+w_noise:
+  desc: null
+  value: 0.01
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.13
+    cli_version: 0.16.1
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1702736534.189499
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 2
+      - 23
+      - 37
+      4: 3.10.13
+      5: 0.16.1
+      8:
+      - 5
+      13: linux-x86_64

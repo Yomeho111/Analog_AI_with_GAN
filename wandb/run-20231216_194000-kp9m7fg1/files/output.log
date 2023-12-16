@@ -1,0 +1,31 @@
+InferenceRPUConfig(
+    runtime=RuntimeParameter(),
+    pre_post=PrePostProcessingParameter(input_range=InputRangeParameter(enable=False)),
+    mapping=MappingParameter(),
+    forward=IOParameters(
+        inp_res=0.015625,
+        out_noise=0.03,
+        out_res=0.00390625,
+        w_noise=0.1,
+        w_noise_type=WeightNoiseType.ADDITIVE_CONSTANT
+    ),
+    backward=IOParameters(is_perfect=True),
+    update=UpdateParameters(pulse_type=PulseType.NONE),
+    noise_model=PCMLikeNoiseModel(g_converter=SinglePairConductanceConverter(g_max=25.00, g_min=0.00), g_max=25.0, prog_coeff_g_max_reference=25.0, prog_coeff=[0.26348, 1.965, -1.1731], t_0=20.0, t_read=2.5e-07, prog_noise_scale=1.0, read_noise_scale=1.0, drift_scale=1.0),
+    drift_compensation=GlobalDriftCompensation(),
+    clip=WeightClipParameter(type=WeightClipType.NONE),
+    remap=WeightRemapParameter(type=WeightRemapType.NONE),
+    modifier=WeightModifierParameter(type=WeightModifierType.NONE),
+    device=IdealDevice()
+)
+19:41:34 --- Step 20: Generator loss: 1.1482410907745362, discriminator loss: 1.08037571310997
+19:43:05 --- Step 40: Generator loss: 1.0573771655559543, discriminator loss: 1.0390373170375824
+19:44:36 --- Step 60: Generator loss: 1.0538117766380308, discriminator loss: 1.045573264360428
+19:46:07 --- Step 80: Generator loss: 1.0640859603881834, discriminator loss: 1.034717109799385
+19:47:38 --- Step 100: Generator loss: 1.0839275002479554, discriminator loss: 1.0444729208946228
+19:49:06 --- Step 120: Generator loss: 1.0847771972417835, discriminator loss: 1.0464232385158536
+19:50:37 --- Step 140: Generator loss: 1.0699339240789412, discriminator loss: 1.0343548774719238
+19:52:09 --- Step 160: Generator loss: 1.0630310922861097, discriminator loss: 1.0434186995029449
+19:53:40 --- Step 180: Generator loss: 1.068376126885414, discriminator loss: 1.0358435481786727
+19:55:11 --- Step 200: Generator loss: 1.0787745654582979, discriminator loss: 1.0286696583032608
+19:56:42 --- Step 220: Generator loss: 1.0905033558607102, discriminator loss: 1.0482744812965392

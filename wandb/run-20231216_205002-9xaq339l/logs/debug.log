@@ -1,0 +1,31 @@
+2023-12-16 20:50:02,879 INFO    Thread-3 (_run_job):455467 [wandb_setup.py:_flush():76] Current SDK version is 0.16.1
+2023-12-16 20:50:02,879 INFO    Thread-3 (_run_job):455467 [wandb_setup.py:_flush():76] Configure stats pid to 455467
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_setup.py:_flush():76] Loading settings from /home/my2770/.config/wandb/settings
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_setup.py:_flush():76] Loading settings from /home/my2770/project/wandb/settings
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'RESNET18-GAN-w_noise', 'entity': 'mingfeng', 'root_dir': '/home/my2770/project', 'sweep_id': '8175bi07', 'run_id': '9xaq339l', 'sweep_param_path': '/home/my2770/project/wandb/sweep-8175bi07/config-9xaq339l.yaml'}
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'w_noise.py', 'program_abspath': '/home/my2770/project/w_noise.py', 'program': '/home/my2770/project/w_noise.py'}
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_init.py:_log_setup():524] Logging user logs to /home/my2770/project/wandb/run-20231216_205002-9xaq339l/logs/debug.log
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_init.py:_log_setup():525] Logging internal logs to /home/my2770/project/wandb/run-20231216_205002-9xaq339l/logs/debug-internal.log
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():564] calling init triggers
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():571] wandb.init called with sweep_config: {'w_noise': 0.01}
+config: {}
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():614] starting backend
+2023-12-16 20:50:02,880 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():618] setting up manager
+2023-12-16 20:50:02,887 INFO    Thread-3 (_run_job):455467 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-12-16 20:50:02,888 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():624] backend started and connected
+2023-12-16 20:50:02,901 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_config_callback():1342] config_cb None None {'w_noise': 0.01}
+2023-12-16 20:50:02,902 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():716] updated telemetry
+2023-12-16 20:50:02,903 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():749] communicating run to backend with 90.0 second timeout
+2023-12-16 20:50:03,085 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_on_init():2254] communicating current version
+2023-12-16 20:50:03,170 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_on_init():2263] got version response 
+2023-12-16 20:50:03,170 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():800] starting run threads in backend
+2023-12-16 20:50:03,242 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_console_start():2233] atexit reg
+2023-12-16 20:50:03,242 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_redirect():2088] redirect: wrap_raw
+2023-12-16 20:50:03,242 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_redirect():2153] Wrapping output streams.
+2023-12-16 20:50:03,243 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_redirect():2178] Redirects installed.
+2023-12-16 20:50:03,244 INFO    Thread-3 (_run_job):455467 [wandb_init.py:init():841] run started, returning control to user process
+2023-12-16 20:51:26,219 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_finish():1962] finishing run mingfeng/RESNET18-GAN-w_noise/9xaq339l
+2023-12-16 20:51:26,219 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_atexit_cleanup():2202] got exitcode: 1
+2023-12-16 20:51:26,219 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_restore():2185] restore
+2023-12-16 20:51:26,219 INFO    Thread-3 (_run_job):455467 [wandb_run.py:_restore():2191] restore done

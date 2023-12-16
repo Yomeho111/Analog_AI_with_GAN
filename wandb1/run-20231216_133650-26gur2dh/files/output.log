@@ -1,0 +1,49 @@
+InferenceRPUConfig(
+    runtime=RuntimeParameter(),
+    pre_post=PrePostProcessingParameter(input_range=InputRangeParameter(enable=False)),
+    mapping=MappingParameter(),
+    forward=IOParameters(
+        inp_res=0.0078125,
+        out_noise=0.1,
+        out_res=0.015625,
+        w_noise=0.03,
+        w_noise_type=WeightNoiseType.ADDITIVE_CONSTANT
+    ),
+    backward=IOParameters(is_perfect=True),
+    update=UpdateParameters(pulse_type=PulseType.NONE),
+    noise_model=PCMLikeNoiseModel(g_converter=SinglePairConductanceConverter(g_max=25.00, g_min=0.00), g_max=25.0, prog_coeff_g_max_reference=25.0, prog_coeff=[0.26348, 1.965, -1.1731], t_0=20.0, t_read=2.5e-07, prog_noise_scale=1.0, read_noise_scale=1.0, drift_scale=1.0),
+    drift_compensation=GlobalDriftCompensation(),
+    clip=WeightClipParameter(type=WeightClipType.NONE),
+    remap=WeightRemapParameter(type=WeightRemapType.NONE),
+    modifier=WeightModifierParameter(type=WeightModifierType.NONE),
+    device=IdealDevice()
+)
+13:38:28 --- Step 20: Generator loss: 0.7956609308719635, discriminator loss: 0.7768955707550049
+13:40:00 --- Step 40: Generator loss: 0.7583522528409956, discriminator loss: 0.7403369277715683
+13:41:33 --- Step 60: Generator loss: 0.759727731347084, discriminator loss: 0.7404194980859755
+13:43:05 --- Step 80: Generator loss: 0.7589196503162383, discriminator loss: 0.7405358642339708
+13:44:37 --- Step 100: Generator loss: 0.7586825191974639, discriminator loss: 0.7395161122083663
+13:46:06 --- Step 120: Generator loss: 0.7473765134811401, discriminator loss: 0.7427768021821977
+13:47:39 --- Step 140: Generator loss: 0.7638363927602767, discriminator loss: 0.7368399292230605
+13:49:11 --- Step 160: Generator loss: 0.7582421600818635, discriminator loss: 0.7420904129743576
+13:50:44 --- Step 180: Generator loss: 0.7555169463157654, discriminator loss: 0.7380972534418107
+13:52:16 --- Step 200: Generator loss: 0.7620506405830383, discriminator loss: 0.7340080738067628
+13:53:48 --- Step 220: Generator loss: 0.7597066372632979, discriminator loss: 0.7397646754980088
+13:55:17 --- Step 240: Generator loss: 0.757591950893402, discriminator loss: 0.7372526705265044
+13:56:49 --- Step 260: Generator loss: 0.7606864988803864, discriminator loss: 0.7342560380697251
+13:58:22 --- Step 280: Generator loss: 0.7662704527378081, discriminator loss: 0.7398966968059539
+13:59:54 --- Step 300: Generator loss: 0.7623523205518722, discriminator loss: 0.7330018699169161
+14:01:26 --- Step 320: Generator loss: 0.7592742890119552, discriminator loss: 0.7355593055486679
+14:02:59 --- Step 340: Generator loss: 0.7661689907312393, discriminator loss: 0.7344970047473908
+14:04:28 --- Step 360: Generator loss: 0.7581290781497956, discriminator loss: 0.7393031120300294
+14:06:00 --- Step 380: Generator loss: 0.7608891516923905, discriminator loss: 0.7352443784475327
+14:07:33 --- Step 400: Generator loss: 0.7571585536003113, discriminator loss: 0.7333846181631087
+14:09:05 --- Step 420: Generator loss: 0.7571768134832383, discriminator loss: 0.7317462533712388
+14:10:37 --- Step 440: Generator loss: 0.7645469635725021, discriminator loss: 0.7334610760211946
+14:12:10 --- Step 460: Generator loss: 0.7698500156402587, discriminator loss: 0.7346048653125763
+14:13:39 --- Step 480: Generator loss: 0.7558990508317948, discriminator loss: 0.7358942866325378
+14:15:11 --- Step 500: Generator loss: 0.7695120722055435, discriminator loss: 0.7338820427656174
+14:16:43 --- Step 520: Generator loss: 0.7654742032289505, discriminator loss: 0.7345135807991028
+14:18:16 --- Step 540: Generator loss: 0.7692483365535737, discriminator loss: 0.7296984255313873
+14:19:50 --- Step 560: Generator loss: 0.7717678755521774, discriminator loss: 0.733307087421417
+14:21:25 --- Step 580: Generator loss: 0.7752643257379532, discriminator loss: 0.7327373087406157

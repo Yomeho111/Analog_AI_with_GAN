@@ -1,0 +1,40 @@
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_setup.py:_flush():76] Current SDK version is 0.16.1
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_setup.py:_flush():76] Configure stats pid to 437395
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_setup.py:_flush():76] Loading settings from /home/my2770/.config/wandb/settings
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_setup.py:_flush():76] Loading settings from /home/my2770/project/wandb/settings
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'RESNET18-GAN-w_noise', 'entity': 'mingfeng', 'root_dir': '/home/my2770/project', 'run_id': '6dhpvocg', 'sweep_param_path': '/home/my2770/project/wandb/sweep-dl01zd1f/config-6dhpvocg.yaml', 'sweep_id': 'dl01zd1f'}
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'w_noise.py', 'program_abspath': '/home/my2770/project/w_noise.py', 'program': '/home/my2770/project/w_noise.py'}
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_init.py:_log_setup():524] Logging user logs to /home/my2770/project/wandb/run-20231216_193505-6dhpvocg/logs/debug.log
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_init.py:_log_setup():525] Logging internal logs to /home/my2770/project/wandb/run-20231216_193505-6dhpvocg/logs/debug-internal.log
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_init.py:init():564] calling init triggers
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_init.py:init():571] wandb.init called with sweep_config: {'w_noise': 0.1}
+config: {}
+2023-12-16 19:35:05,655 INFO    Thread-7 (_run_job):437395 [wandb_init.py:init():614] starting backend
+2023-12-16 19:35:05,656 INFO    Thread-7 (_run_job):437395 [wandb_init.py:init():618] setting up manager
+2023-12-16 19:35:05,661 INFO    Thread-7 (_run_job):437395 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2023-12-16 19:35:05,662 INFO    Thread-7 (_run_job):437395 [wandb_init.py:init():624] backend started and connected
+2023-12-16 19:35:05,662 WARNING MsgRouterThr:437395 [router.py:message_loop():77] message_loop has been closed
+2023-12-16 19:35:05,673 INFO    Thread-7 (_run_job):437395 [wandb_run.py:_config_callback():1342] config_cb None None {'w_noise': 0.1}
+2023-12-16 19:35:05,674 INFO    Thread-7 (_run_job):437395 [wandb_init.py:init():716] updated telemetry
+2023-12-16 19:35:05,709 ERROR   Thread-7 (_run_job):437395 [wandb_init.py:init():1198] error
+Traceback (most recent call last):
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 726, in init
+    backend.interface.publish_header()
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/interface/interface.py", line 93, in publish_header
+    self._publish_header(header)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/interface/interface_shared.py", line 330, in _publish_header
+    self._publish(rec)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/interface/interface_sock.py", line 51, in _publish
+    self._sock_client.send_record_publish(record)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 221, in send_record_publish
+    self.send_server_request(server_req)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 155, in send_server_request
+    self._send_message(msg)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 152, in _send_message
+    self._sendall_with_error_handle(header + data)
+  File "/home/my2770/project/aihwkit_env/lib/python3.10/site-packages/wandb/sdk/lib/sock_client.py", line 130, in _sendall_with_error_handle
+    sent = self._sock.send(data)
+BrokenPipeError: [Errno 32] Broken pipe
