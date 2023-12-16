@@ -490,7 +490,7 @@ if __name__ == "__main__":
     sweep_config['parameters'] = parameters_dict
 
     print(f"\n{datetime.now().time().replace(microsecond=0)} --- " f"Started GAN Example")
-    sweep_id = wandb.sweep(sweep_config, project="RESNET18-GAN")
+    sweep_id = wandb.sweep(sweep_config, project="RESNET18-GAN1")
     wandb.agent(sweep_id, train, count=15)
 
     print(f"{datetime.now().time().replace(microsecond=0)} --- " f"Completed GAN Example")

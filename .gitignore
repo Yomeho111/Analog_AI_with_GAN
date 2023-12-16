@@ -1,3 +1,5 @@
 aihwkit_env/
 aihwkit/
 *.pth
+wandb/
+wandb1/
