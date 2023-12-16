@@ -52,7 +52,7 @@ rpu_config.drift_compensation = GlobalDriftCompensation()
 
 # Set your parameters
 SEED = 1
-N_EPOCHS = 5
+N_EPOCHS = 2
 Z_DIM = 28
 DISPLAY_STEP = 20
 BATCH_SIZE = 512
@@ -490,7 +490,7 @@ if __name__ == "__main__":
     sweep_config['parameters'] = parameters_dict
 
     print(f"\n{datetime.now().time().replace(microsecond=0)} --- " f"Started GAN Example")
-    sweep_id = wandb.sweep(sweep_config, project="RESNET18-GAN1")
-    wandb.agent(sweep_id, train, count=15)
+    sweep_id = wandb.sweep(sweep_config, project="RESNET18-GAN2")
+    wandb.agent(sweep_id, train, count=10)
 
     print(f"{datetime.now().time().replace(microsecond=0)} --- " f"Completed GAN Example")
